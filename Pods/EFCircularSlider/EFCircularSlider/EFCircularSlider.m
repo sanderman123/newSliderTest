@@ -334,7 +334,7 @@ static inline float AngleFromNorth(CGPoint p1, CGPoint p2, BOOL flipped) {
     
     if(angle==360) angle=0;
     
-//    angle += 90;
+    angle += 180;
     
     return angle;
 }
