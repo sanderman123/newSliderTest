@@ -7,20 +7,22 @@
 //
 
 #import "ViewController.h"
-#import "EFCircularSlider.h"
+//#import "EFCircularSlider.h"
 
 @interface ViewController ()
 
 @end
 
+
 @implementation ViewController
+@synthesize circularSlider;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
     CGRect sliderFrame = CGRectMake(110, 150, 75, 75);
-    EFCircularSlider* circularSlider = [[EFCircularSlider alloc] initWithFrame:sliderFrame];
+    circularSlider = [[EFCircularSlider alloc] initWithFrame:sliderFrame];
     [self.view addSubview:circularSlider];
     [circularSlider addTarget:self action:@selector(roundSliderChanged:) forControlEvents:UIControlEventValueChanged];
     circularSlider.lineWidth = 4;
@@ -44,7 +46,7 @@
 }
 
 -(void)roundSliderChanged:(id)sender {
-    
+    NSLog(@"%f",circularSlider.currentValue);
 }
 
 @end

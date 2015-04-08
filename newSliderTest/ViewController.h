@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EFCircularSlider.h"
+IB_DESIGNABLE
 @interface ViewController : UIViewController
 
+@property (nonatomic) IBInspectable EFCircularSlider* circularSlider;
 
 @end
 

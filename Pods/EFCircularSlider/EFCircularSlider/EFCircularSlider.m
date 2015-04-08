@@ -320,10 +320,12 @@ static inline float AngleFromNorth(CGPoint p1, CGPoint p2, BOOL flipped) {
 }
 
 -(float) valueFromAngle {
-    if(angle < 0) {
-        _currentValue = -angle;
+    int angleCopy = angle;
+    angleCopy -= 180;
+    if(angleCopy < 0) {
+        _currentValue = -angleCopy;
     } else {
-        _currentValue = 270 - angle + 90;
+        _currentValue = 270 - angleCopy + 90;
     }
     fixedAngle = _currentValue;
     return (_currentValue*(_maximumValue - _minimumValue))/360.0f;
